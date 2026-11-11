@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Registration</title>
+</head>
+<body>
+    <h2>Event Registration Form</h2>
+    <form id="registrationForm">
+        <label>Name: <input id="name" required></label><br><br>
+        <label>Email: <input id="email" type="email" required></label><br><br>
+        <label>Event:
+            <select id="event">
+                <option>Web Development</option>
+                <option>AI Workshop</option>
+                <option>Hackathon</option>
+            </select>
+        </label><br><br>
+        <button type="submit">Register</button>
+    </form>
+    <p id="message"></p>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            document.getElementById('message').textContent = 'Registration successful! Welcome ' + name + '.';
+        });
+    </script>
+</body>
+</html>
